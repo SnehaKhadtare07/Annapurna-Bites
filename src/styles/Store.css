@@ -1,0 +1,269 @@
+/* Reset all default button styles */
+button {
+  all: unset; /* Remove all default styles */
+  box-sizing: border-box;
+}
+
+/* Store container styles */
+.store-container {
+  font-family: 'Playfair Display', serif;
+  background-image: url('/src/assets/store.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat; /* Ensure background doesn't repeat */
+  color: white;
+  padding: 20px;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Added padding to prevent content clipping behind fixed navbar */
+  padding-top: 60px; /* Added padding to offset fixed navbar height */
+}
+
+.store-heading {
+  color: white; 
+  margin-top: 10px; 
+  font-size: 2rem; 
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-card img {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-upload-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 270px;
+  height: 270px;
+}
+
+.image-upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 270px;
+  height: 270px;
+  border-radius: 10px;
+}
+
+/* Fancy product card styles */
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Fancy button styles */
+
+
+/* Hover effect */
+.fancy-button:hover {
+  color: #fff; /* Text color on hover */
+  background-color: darkorange; /* Button color change on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transform: translateY(-8px) rotate(1deg); /* Lifting and rotating effect */
+}
+
+/* Active (click) effect */
+.fancy-button:active {
+  transform: scale(0.97); /* Slight shrink on click */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+  background-color: #e69500; /* Slightly darker orange when pressed */
+}
+
+/* Button animation on hover */
+.fancy-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2); /* Subtle white highlight */
+  transition: all 0.75s ease;
+  transform: translate(-50%, -50%) scale(0); /* Initially small */
+}
+
+.fancy-button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expands on hover */
+}
+
+/* Button container styles */
+.button-container {
+  display: flex; /* Use flexbox to align buttons horizontally */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px; /* Add space between the buttons */
+  margin-top: 20px; /* Space above buttons */
+}
+
+/* Pagination styles */
+.pagination {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  padding-bottom: 1rem;
+}
+
+.pagination-button {
+  display: inline-block;
+  padding: 10px 20px; /* Button size */
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #CA840A; /* Text color */
+  background-color: #f8db9d; /* Warm yellow base */
+  border-radius: 25px; /* Curved corners */
+  cursor: pointer;
+  transition: all 0.4s ease; /* Smooth transitions */
+  margin: 0 8px; /* Add spacing between pagination buttons */
+  position: relative; /* For pseudo-elements */
+}
+
+/* Hover effect for pagination buttons */
+.pagination-button:hover {
+  color: #fff; /* Text color changes on hover */
+  background-color: darkorange; /* Button color changes on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transform: translateY(-3px) rotate(-2deg); /* Lift and rotate effect on hover */
+}
+
+/* Active page button */
+.pagination-button.active {
+  background-color: #e69500; /* Darker orange for active state */
+  color: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  cursor: default; /* No pointer effect for the active button */
+}
+
+/* Active (click) effect for pagination */
+.pagination-button:active {
+  transform: scale(0.95); /* Slight shrink on click */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Reduce shadow */
+}
+
+/* Cart and Favorites Buttons Container */
+.cart-favorites-buttons {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 20px; /* Space above buttons */
+  gap: 15px; /* Space between buttons */
+}
+
+/* Base styles for buttons */
+.cart-button, .favorites-button {
+  padding: 12px 24px; /* Button size */
+  font-family: 'Arial', sans-serif; /* Font style */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  border-radius: 25px; /* Curved corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: all 0.3s ease; /* Smooth transitions */
+  outline: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cart button styles */
+.cart-button {
+  background-color: #f8db9d; /* Light yellow base */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  color: #CA840A;
+}
+
+/* Favorites button styles */
+.favorites-button {
+  background-color: #e69500; /* Golden color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  color: white; /* White text color for better contrast */
+}
+
+/* Hover effects */
+.cart-button:hover {
+  background-color: #e3c07a; /* Darker shade for hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.favorites-button:hover {
+  background-color: #d68c00; /* Slightly darker for hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Active (click) effects */
+.cart-button:active, .favorites-button:active {
+  animation: clickScale 0.2s forwards;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/* Keyframes for smooth click scale animation */
+@keyframes clickScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.product-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-upload-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+}
+
+.image-upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}

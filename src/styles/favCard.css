@@ -1,0 +1,94 @@
+.fav-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: auto;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.fav-card:hover {
+  transform: translateY(-8px);
+}
+
+.fav-img-container {
+  position: relative;
+  width: 100%;
+}
+
+.fav-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.fav-card h3 {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.fav-card p {
+  margin: 8px 0;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.fav-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.add-to-cart-btn {
+  background-color: #d36a07;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff6600;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem; /* Increased size */
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.heart-icon.red {
+  color: red;
+}
+
+.heart-icon.white {
+  color: #999;
+}
+
+.heart-icon:hover {
+  transform: scale(1.2);
+}

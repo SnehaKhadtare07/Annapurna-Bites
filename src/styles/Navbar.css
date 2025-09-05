@@ -1,0 +1,90 @@
+.navbar.dark {
+  background: linear-gradient(90deg, #121212, #1e1e1e, #2a2a2a, #121212);
+  color: white;
+}
+
+.navbar.light {
+  background: linear-gradient(90deg, #ff4d4d, #ff944d, #ffd11a, #ff66b2);
+  color: black;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  pointer-events: auto;
+}
+
+.site-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.site-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.icon-btn {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  color: inherit;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+}
+
+.spaced-icon {
+  margin-left: 8px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 0.75rem;
+    gap: 10px;
+  }
+
+  .site-title {
+    font-size: 20px;
+  }
+
+  .icon-btn {
+    font-size: 18px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,124 @@
+/* ===== Settings Page (centered title, dotted divider, centered content) ===== */
+
+.settings-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  color: white;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Sections: center everything */
+.about-section,
+.feedback-section {
+  width: min(900px, 92vw);
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers the heading block */
+  text-align: center;  /* centers the text content */
+}
+
+/* Heading + dotted divider (exactly under title) */
+.section-title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  position: relative;
+}
+
+/* Dotted line under the title */
+.section-title::after {
+  content: "";
+  display: block;
+  width: clamp(240px, 60%, 680px); /* controls divider width */
+  margin: 0.9rem auto 0;
+  border-bottom: 4px dotted currentColor;
+  opacity: 0.7;
+}
+
+/* Content width & centering under the divider */
+.section-content {
+  max-width: clamp(280px, 65ch, 90%); /* nice readable width */
+  margin: 1.25rem auto 0;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Thank-you message */
+.thankyou-msg {
+  font-weight: 600;
+}
+
+/* ---------------- Feedback form (centered) ---------------- */
+
+.feedback-form {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers fields as a block */
+  gap: 1rem;
+}
+
+.feedback-form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 500;
+  text-align: center; /* label text centered */
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center; /* text inside fields centered like the mock */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
+}
+
+.feedback-form button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ff9800;
+  color: #fff;
+  transition: transform 0.05s ease, background 0.2s ease;
+}
+
+.feedback-form button:hover {
+  background: #e68900;
+}
+
+.feedback-form button:active {
+  transform: translateY(1px);
+}
+
+/* Optional dark mode look like your sketch (toggle by adding .dark to settings-container) */
+.settings-container.dark {
+  background: #111;
+  color: #eee;
+}
+
+.settings-container.dark .feedback-form input,
+.settings-container.dark .feedback-form textarea {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #eee;
+}
